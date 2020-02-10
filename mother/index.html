@@ -12,40 +12,52 @@
 </head>
 <body>
     <div id="fullpage" class="fullpage">
+
+        <div class="section my-section my-section-0">
+            <p class="title title-1">辛兴中学</p>
+            <p class="title title-2">高三班同学聚会</p>
+            <p class="time">2019.12</p>
+            <p class="tips">开始观看</p>
+        </div>
         <div class="section my-section my-section-1">
             <img class="my-people-img my-image-1" data-index="1" data-lock="true" src="./images/peoples/1.jpeg" alt="">
-            <img class="my-people-img my-image-2" data-index="2" data-lock="true" src="./images/peoples/2.jpeg" alt="">
+            <img class="my-people-img my-image-2" data-index="2" data-lock="true" src="./images/peoples/6.jpeg" alt="">
             <img class="my-people-img my-image-3" data-index="3" data-lock="true" src="./images/peoples/3.jpeg" alt="">
-            <img class="my-people-img my-image-4" data-index="4" data-lock="true" src="./images/peoples/4.jpeg" alt="">
+            <img class="my-people-img my-image-4" data-index="4" data-lock="true" src="./images/peoples/7.jpeg" alt="">
             <img class="my-people-img my-image-5" data-index="5" data-lock="true" src="./images/peoples/5.jpeg" alt="">
         </div>
         <div class="section my-section my-section-2">
             <img class="my-people-img my-image-1" data-index="1" data-lock="true" src="./images/peoples/1.jpeg" alt="">
-            <img class="my-people-img my-image-2" data-index="2" data-lock="true" src="./images/peoples/2.jpeg" alt="">
+            <img class="my-people-img my-image-2" data-index="2" data-lock="true" src="./images/peoples/6.jpeg" alt="">
             <img class="my-people-img my-image-3" data-index="3" data-lock="true" src="./images/peoples/3.jpeg" alt="">
             <img class="my-people-img my-image-4" data-index="4" data-lock="true" src="./images/peoples/4.jpeg" alt="">
-            <img class="my-people-img my-image-5" data-index="5" data-lock="true" src="./images/peoples/5.jpeg" alt="">
+            <img class="my-people-img my-image-5" data-index="5" data-lock="true" src="./images/peoples/7.jpeg" alt="">
         </div>
         <div class="section my-section my-section-3">
-            <img class="my-people-img my-image-1" data-index="1" data-lock="true" src="./images/peoples/1.jpeg" alt="">
+            <img class="my-people-img my-image-1" data-index="1" data-lock="true" src="./images/peoples/6.jpeg" alt="">
             <img class="my-people-img my-image-2" data-index="2" data-lock="true" src="./images/peoples/2.jpeg" alt="">
             <img class="my-people-img my-image-3" data-index="3" data-lock="true" src="./images/peoples/3.jpeg" alt="">
-            <img class="my-people-img my-image-4" data-index="4" data-lock="true" src="./images/peoples/4.jpeg" alt="">
+            <img class="my-people-img my-image-4" data-index="4" data-lock="true" src="./images/peoples/7.jpeg" alt="">
             <img class="my-people-img my-image-5" data-index="5" data-lock="true" src="./images/peoples/5.jpeg" alt="">
         </div>
         <div class="section my-section my-section-4">
-            <img class="my-people-img my-image-1" data-index="1" data-lock="true" src="./images/peoples/1.jpeg" alt="">
+            <img class="my-people-img my-image-1" data-index="1" data-lock="true" src="./images/peoples/7.jpeg" alt="">
             <img class="my-people-img my-image-2" data-index="2" data-lock="true" src="./images/peoples/2.jpeg" alt="">
             <img class="my-people-img my-image-3" data-index="3" data-lock="true" src="./images/peoples/3.jpeg" alt="">
             <img class="my-people-img my-image-4" data-index="4" data-lock="true" src="./images/peoples/4.jpeg" alt="">
-            <img class="my-people-img my-image-5" data-index="5" data-lock="true" src="./images/peoples/5.jpeg" alt="">
+            <img class="my-people-img my-image-5" data-index="5" data-lock="true" src="./images/peoples/6.jpeg" alt="">
         </div>
         <div class="section my-section my-section-5">
-            <img class="my-people-img my-image-1" data-index="1" data-lock="true" src="./images/peoples/1.jpeg" alt="">
+            <img class="my-people-img my-image-1" data-index="1" data-lock="true" src="./images/peoples/7.jpeg" alt="">
             <img class="my-people-img my-image-2" data-index="2" data-lock="true" src="./images/peoples/2.jpeg" alt="">
-            <img class="my-people-img my-image-3" data-index="3" data-lock="true" src="./images/peoples/3.jpeg" alt="">
+            <img class="my-people-img my-image-3" data-index="3" data-lock="true" src="./images/peoples/6.jpeg" alt="">
             <img class="my-people-img my-image-4" data-index="4" data-lock="true" src="./images/peoples/4.jpeg" alt="">
-            <img class="my-people-img my-image-5" data-index="5" data-lock="true" src="./images/peoples/5.jpeg" alt="">
+            <img class="my-people-img my-image-5" data-index="5" data-lock="true" src="./images/peoples/1.jpeg" alt="">
+        </div>
+        
+        <div class="section my-section my-section-6">
+            <p class="thx">谢谢观看</p>
+            <p class="replay">再看一遍</p>
         </div>
     </div>
     
@@ -55,7 +67,8 @@
         
 
         $(document).ready(function() {
-            $('#fullpage').fullpage({
+            
+            var fullpageObj = new fullpage('#fullpage', {
                 anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
 
 
@@ -78,7 +91,7 @@
                         rotate = 5 - Math.random() * 10;
                         x = 1 - Math.random() * 2;
                         y = 1 - Math.random() * 2;
-                        delay = (index + 1) * 1 - 0.5;
+                        delay = (index + 1) * 0.4 + 0;
 
 
                         $(ele)
@@ -142,9 +155,18 @@
                         x.play();
                     }
                     
+                })
+                .on("tap",".tips", function(){
+                    // fullpageObj.
+                    fullpage_api.moveTo(2);
+
+                    $(".playBtn").addClass("playing");
+                    document.getElementById("myAudio").play();
+
+                })
+                .on("tap",".replay", function(){
+                    fullpage_api.moveTo(2);
                 });
-
-
 
         });
     </script>

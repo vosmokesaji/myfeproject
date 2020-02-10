@@ -1,9 +1,67 @@
+p {
+  margin: 0;
+}
+
 .fullpage {
   position: relative;
 }
 
+.title, .time, .tips {
+  text-align: center;
+  color: #fff;
+}
+
+.title {
+  color: #fff;
+  font-size: 6vh;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.title-2 {
+  margin-bottom: 2vh;
+}
+
+.time {
+  font-size: 3vh;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  padding-bottom: 40vh;
+}
+
+.tips {
+  height: 6vh;
+  width: 50vw;
+  line-height: 6vh;
+  border-radius: 1vh;
+  background-color: #f0c;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.thx {
+  text-align: center;
+  color: #fff;
+  font-size: 6vh;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  padding-bottom: 50vh;
+}
+
+.replay {
+  height: 6vh;
+  width: 50vw;
+  line-height: 6vh;
+  border-radius: 1vh;
+  background-color: #f0c;
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+}
+
 .my-section {
   background-size: cover;
+}
+
+.my-section-0 {
+  background-image: url("../images/bg/1.jpeg");
 }
 
 .my-section-1 {
@@ -24,6 +82,10 @@
 
 .my-section-5 {
   background-image: url("../images/bg/5.jpeg");
+}
+
+.my-section-6 {
+  background-image: url("../images/bg/2.jpeg");
 }
 
 .my-people-img {
