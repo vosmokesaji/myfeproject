@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高中同学聚会</title>
+    <link rel="stylesheet" href="./css/fullpage.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jq.js"></script>
+    <script src="./js/fullpage.js"></script>
+
+</head>
+<body>
+    <div id="fullpage" class="fullpage">
+        <div class="section my-section my-section-1">
+            <img class="my-people-img my-image-1" data-index="1" data-lock="true" src="./images/peoples/1.jpeg" alt="">
+            <img class="my-people-img my-image-2" data-index="2" data-lock="true" src="./images/peoples/2.jpeg" alt="">
+            <img class="my-people-img my-image-3" data-index="3" data-lock="true" src="./images/peoples/3.jpeg" alt="">
+            <img class="my-people-img my-image-4" data-index="4" data-lock="true" src="./images/peoples/4.jpeg" alt="">
+            <img class="my-people-img my-image-5" data-index="5" data-lock="true" src="./images/peoples/5.jpeg" alt="">
+        </div>
+        <div class="section my-section my-section-2">
+            <img class="my-people-img my-image-1" data-index="1" data-lock="true" src="./images/peoples/1.jpeg" alt="">
+            <img class="my-people-img my-image-2" data-index="2" data-lock="true" src="./images/peoples/2.jpeg" alt="">
+            <img class="my-people-img my-image-3" data-index="3" data-lock="true" src="./images/peoples/3.jpeg" alt="">
+            <img class="my-people-img my-image-4" data-index="4" data-lock="true" src="./images/peoples/4.jpeg" alt="">
+            <img class="my-people-img my-image-5" data-index="5" data-lock="true" src="./images/peoples/5.jpeg" alt="">
+        </div>
+        <div class="section my-section my-section-3">
+            <img class="my-people-img my-image-1" data-index="1" data-lock="true" src="./images/peoples/1.jpeg" alt="">
+            <img class="my-people-img my-image-2" data-index="2" data-lock="true" src="./images/peoples/2.jpeg" alt="">
+            <img class="my-people-img my-image-3" data-index="3" data-lock="true" src="./images/peoples/3.jpeg" alt="">
+            <img class="my-people-img my-image-4" data-index="4" data-lock="true" src="./images/peoples/4.jpeg" alt="">
+            <img class="my-people-img my-image-5" data-index="5" data-lock="true" src="./images/peoples/5.jpeg" alt="">
+        </div>
+        <div class="section my-section my-section-4">
+            <img class="my-people-img my-image-1" data-index="1" data-lock="true" src="./images/peoples/1.jpeg" alt="">
+            <img class="my-people-img my-image-2" data-index="2" data-lock="true" src="./images/peoples/2.jpeg" alt="">
+            <img class="my-people-img my-image-3" data-index="3" data-lock="true" src="./images/peoples/3.jpeg" alt="">
+            <img class="my-people-img my-image-4" data-index="4" data-lock="true" src="./images/peoples/4.jpeg" alt="">
+            <img class="my-people-img my-image-5" data-index="5" data-lock="true" src="./images/peoples/5.jpeg" alt="">
+        </div>
+        <div class="section my-section my-section-5">
+            <img class="my-people-img my-image-1" data-index="1" data-lock="true" src="./images/peoples/1.jpeg" alt="">
+            <img class="my-people-img my-image-2" data-index="2" data-lock="true" src="./images/peoples/2.jpeg" alt="">
+            <img class="my-people-img my-image-3" data-index="3" data-lock="true" src="./images/peoples/3.jpeg" alt="">
+            <img class="my-people-img my-image-4" data-index="4" data-lock="true" src="./images/peoples/4.jpeg" alt="">
+            <img class="my-people-img my-image-5" data-index="5" data-lock="true" src="./images/peoples/5.jpeg" alt="">
+        </div>
+    </div>
+    
+    
+    <script>
+        
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
+
+
+                // 某个方块载入职后
+                afterLoad: function(origin, destination, direction){
+                    var loadedSection = this,
+                        scale = 1,          // 放大倍数
+                        rotate = 0,         // 旋转角度
+                        x = 0,              // 横向位移
+                        y = 0,              // 纵向位移
+                        delay = 0;
+
+                    $(origin.item).find(".my-people-img")
+                            .removeAttr('style').attr('data-lock', 'true');
+
+                    
+                    console.log(arguments, this);
+                    
+                    $(destination.item).find(".my-people-img").each(function(index, ele){
+
+                        scale = 1 - Math.random() * 0.1;
+                        rotate = 5 - Math.random() * 10;
+                        x = 1 - Math.random() * 2;
+                        y = 1 - Math.random() * 2;
+                        delay = (index + 1) * 1 - 0.5;
+
+
+                        $(ele)
+                        .css({
+                            'transition': `transform .6s ease-in-out ${delay}s, opacity .6s ease-in-out ${delay}s`,
+                            'transform' : `scale(${scale}) rotate(${rotate}deg) translateX(${x}vw) translateY(${y}vh)`,
+                            'opacity' : 1
+                        })
+                        .attr('data-lock', 'true');
+                    })
+                }
+
+            });
+
+            $("body")
+                .on("tap", ".my-people-img", function(){
+                    var $this = $(this),
+                        parents = $this.parent(),
+                        targetIndex = Number($this.attr('data-index')),
+                        
+                        scale = 1,          // 放大倍数
+                        rotate = 0,         // 旋转角度
+                        x = 0,              // 横向位移
+                        y = 0;              // 纵向位移
+                    
+                        
+                    parents.find(".my-people-img").each(function(index, ele){
+                        var thisIndex = Number($(ele).attr('data-index'));
+
+                        scale = 1 - Math.random() * 0.1;
+                        rotate = 5 - Math.random() * 10;
+                        y = 1 - Math.random() * 2
+                        x = 1 - Math.random() * 2;
+
+                        if(thisIndex <= targetIndex){
+                            y -= 3;
+                        }else{
+                            y += 26;
+                        }
+
+                        if(thisIndex == targetIndex){
+                            scale = 1 + Math.random() * 0.1;
+                        }
+
+                        $(ele)
+                        .css({
+                            'transition': `all .3s ease-in-out`,
+                            'transform' : `scale(${scale}) rotate(${rotate}deg) translateX(${x}vw) translateY(${y}vh)`,
+                        })
+                    })
+                    
+                });
+
+        });
+    </script>
+</body>
+</html>
