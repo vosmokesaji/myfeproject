@@ -89,3 +89,29 @@
         transform: scale(1.5) translateY(-10vw) translateX(-10vh);
     }
 }
+
+.audio{
+    position: fixed;
+    top: -100px;
+    left: 0;
+}
+
+.playBtn{
+    position: fixed;
+    height: 12vw;
+    width: 12vw;
+    top: 4vw;
+    right: 4vw;
+    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 10vw;
+    background-image: url(../images/icons/notification_forbid_fill.svg);
+    background-size: 6vw 6vw;
+    background-position: 3vw 3vw;
+    background-repeat: no-repeat;
+}
+.playBtn.playing{
+    
+    background-image: url(../images/icons/notification_fill.svg);
+    // background-color: #ffdc00;
+}

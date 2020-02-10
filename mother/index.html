@@ -49,9 +49,11 @@
         </div>
     </div>
     
-    
+    <audio src="./music/不说再见.mp3" id="myAudio" controls="controls" class="audio" autoplay="autoplay"></audio>
+    <div class="playBtn"></div>
     <script>
         
+
         $(document).ready(function() {
             $('#fullpage').fullpage({
                 anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
@@ -69,8 +71,6 @@
                     $(origin.item).find(".my-people-img")
                             .removeAttr('style').attr('data-lock', 'true');
 
-                    
-                    console.log(arguments, this);
                     
                     $(destination.item).find(".my-people-img").each(function(index, ele){
 
@@ -130,7 +130,21 @@
                         })
                     })
                     
+                })
+                .on("tap", ".playBtn", function(){
+                    
+                    var x = document.getElementById("myAudio");
+                    if($(this).hasClass("playing")){
+                        $(this).removeClass("playing");
+                        x.pause();
+                    }else{
+                        $(this).addClass("playing");
+                        x.play();
+                    }
+                    
                 });
+
+
 
         });
     </script>
